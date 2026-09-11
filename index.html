@@ -313,10 +313,11 @@
 <script>
   // ▼▼ 環境ごとに変更する設定値 ▼▼
   // テスト環境用リポジトリと本番環境用リポジトリで、それぞれ別のGASデプロイURLを設定してください
-  const GAS_ENDPOINT = "https://script.google.com/macros/s/AKfycbxGTmCUnV-m3QXoiVQl2EGiz6Cl9kYyHHAUkXlLh2602s1xx2TMteXZR8HzmtFpdTL6/exec";
+  const GAS_ENDPOINT = "https://script.google.com/macros/s/AKfycbwhPlASGST33wQB02Dpou9QiZayyLy3LQJqdKwVaaJv4NOLXMJHVj7s9Vu_PCPAAdY/exec";
   // ▲▲ ここまで ▲▲
 
   const FORM_TYPE = "簡単オファー(共通)";
+  const REQUIRED_FIELDS = ["name", "age", "tel"]; // ★のついた必須項目と合わせて変更してください
 
   const form = document.getElementById("entryForm");
   const statusEl = document.getElementById("status");
@@ -350,6 +351,7 @@
     data.contactTime = contactTime;
 
     data.formType = FORM_TYPE;
+    data.requiredFields = REQUIRED_FIELDS.join(",");
     data.submittedAt = new Date().toISOString();
     data.pageUrl = window.location.href;
 

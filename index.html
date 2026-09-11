@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>簡単オファー登録｜応募フォーム</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#faf3f1;
+    --card:#ffffff;
+    --band:#c69a92;
+    --band-text:#ffffff;
+    --ink:#5a3d35;
+    --ink-soft:#8a6a61;
+    --line:#d9beb6;
+    --star:#ffffff;
+    --error:#b23b4e;
+    --radius-pill:28px;
+    --radius-soft:10px;
+    --max:640px;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:"Noto Sans JP", sans-serif;
+    line-height:1.8;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--ink);}
+
+  header.top{
+    background:#ffffff;
+    padding:18px 20px;
+    text-align:center;
+    border-bottom:1px solid var(--line);
+  }
+  header.top .brand{
+    font-family:"Noto Serif JP", serif;
+    font-weight:700;
+    font-size:20px;
+    color:var(--ink);
+  }
+  header.top .brand span{color:var(--band);}
+  header.top p{
+    margin:6px 0 0;
+    font-size:12px;
+    color:var(--ink-soft);
+  }
+
+  main{
+    max-width:var(--max);
+    margin:0 auto;
+    padding:24px 16px 80px;
+  }
+
+  .intro{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:var(--radius-soft);
+    padding:20px 18px;
+    margin-bottom:28px;
+    font-size:14px;
+    color:var(--ink-soft);
+  }
+  .intro strong{color:var(--ink);}
+
+  .field{margin-bottom:26px;}
+
+  .band{
+    background:var(--band);
+    color:var(--band-text);
+    text-align:center;
+    padding:13px 12px;
+    border-radius:var(--radius-soft);
+    font-size:15.5px;
+    font-weight:700;
+    letter-spacing:.04em;
+    margin-bottom:14px;
+  }
+  .band .star{color:var(--star); margin-right:4px;}
+
+  .field-body{padding:0 6px;}
+
+  input[type=text],
+  input[type=tel],
+  input[type=email],
+  input[type=number],
+  select,
+  textarea{
+    width:100%;
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:var(--radius-pill);
+    color:var(--ink);
+    font-family:inherit;
+    font-size:16px;
+    padding:14px 20px;
+    outline:none;
+    transition:border-color .15s ease;
+  }
+  textarea{
+    border-radius:var(--radius-soft);
+    min-height:100px;
+    resize:vertical;
+  }
+  select{
+    appearance:none;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23c69a92'><path d='M7 10l5 5 5-5z'/></svg>");
+    background-repeat:no-repeat;
+    background-position:right 18px center;
+    background-size:18px;
+  }
+  input:focus, select:focus, textarea:focus{border-color:var(--band);}
+
+  .age-row{display:flex; align-items:center; gap:10px;}
+  .age-row input{max-width:140px;}
+  .age-row span{color:var(--ink-soft); font-size:14px;}
+
+  .radio-row{display:flex; gap:28px; justify-content:center; padding:4px 0;}
+  .radio-row label{
+    display:flex; align-items:center; gap:8px;
+    font-size:15px; color:var(--ink); cursor:pointer;
+  }
+  input[type=radio]{accent-color:var(--band); width:18px; height:18px;}
+
+  .day-row{display:flex; gap:14px; flex-wrap:wrap; justify-content:center; padding:4px 0 14px;}
+  .day-row label{
+    display:flex; align-items:center; gap:6px;
+    font-size:15px; color:var(--ink); cursor:pointer;
+  }
+  input[type=checkbox]{accent-color:var(--band); width:18px; height:18px;}
+
+  .time-row{display:flex; align-items:center; gap:10px; justify-content:center; flex-wrap:wrap;}
+  .time-row select{width:auto; min-width:88px;}
+  .time-row span{font-size:14px; color:var(--ink-soft);}
+
+  .note{
+    font-size:12.5px;
+    color:var(--ink-soft);
+    margin-top:8px;
+    padding:0 6px;
+  }
+
+  .consent{
+    display:flex; align-items:flex-start; gap:10px;
+    justify-content:center;
+    padding:8px 0;
+  }
+  .consent label{font-size:13.5px; color:var(--ink);}
+  .consent a{text-decoration:underline;}
+
+  .submit-row{text-align:center; padding-top:12px;}
+  button[type=submit]{
+    appearance:none;
+    background:var(--band);
+    color:#fff;
+    border:none;
+    border-radius:var(--radius-pill);
+    font-family:inherit;
+    font-weight:700;
+    font-size:16px;
+    padding:15px 48px;
+    cursor:pointer;
+    letter-spacing:.04em;
+    transition:opacity .15s ease;
+  }
+  button[type=submit]:hover{opacity:.88;}
+  button[type=submit]:disabled{background:#d9c3bd; cursor:not-allowed;}
+
+  #status{margin-top:14px; font-size:14px;}
+  #status.error{color:var(--error);}
+  #status.success{color:#7a8f5c;}
+
+  footer{
+    text-align:center;
+    font-size:12px;
+    color:var(--ink-soft);
+    padding:24px 16px 48px;
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="brand">JOB<span>CHALLE</span></div>
+  <p>簡単オファー登録フォーム</p>
+</header>
+
+<main>
+  <div class="intro">
+    <strong>★</strong>印のある項目は必須入力項目です。ご入力いただいた内容をもとに、担当スタッフよりご連絡いたします。
+  </div>
+
+  <form id="entryForm">
+
+    <div class="field">
+      <div class="band"><span class="star">★</span>応募先店舗</div>
+      <div class="field-body">
+        <select id="store" name="store" required>
+          <option value="" disabled selected>選択してください</option>
+          <!-- 店舗一覧をここに追加 -->
+          <option value="店舗A">店舗A</option>
+          <option value="店舗B">店舗B</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="band"><span class="star">★</span>氏名（ひらがな）</div>
+      <div class="field-body">
+        <input type="text" id="name" name="name" required placeholder="やまだ　はなこ">
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="band">性　別</div>
+      <div class="field-body">
+        <div class="radio-row">
+          <label><input type="radio" name="gender" value="女性" required> 女性</label>
+          <label><input type="radio" name="gender" value="男性"> 男性</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="band"><span class="star">★</span>年　齢</div>
+      <div class="field-body">
+        <div class="age-row">
+          <input type="number" id="age" name="age" min="18" max="99" required>
+          <span>歳</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="band"><span class="star">★</span>希望連絡先（電話番号）</div>
+      <div class="field-body">
+        <input type="tel" id="tel" name="tel" required placeholder="09012345678">
+        <p class="note">※非通知着信設定が「拒否」となっていないかご確認ください。</p>
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="band">希望連絡先（メールアドレス）</div>
+      <div class="field-body">
+        <input type="email" id="email" name="email">
+        <p class="note">※『jobchalle.com』、『insou-west.co.jp』のメールをドメイン指定受信に設定する等メールを受信できるようにしてください。</p>
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="band"><span class="star">★</span>希望連絡日時</div>
+      <div class="field-body">
+        <div class="day-row">
+          <label><input type="checkbox" name="day" value="月"> 月</label>
+          <label><input type="checkbox" name="day" value="火"> 火</label>
+          <label><input type="checkbox" name="day" value="水"> 水</label>
+          <label><input type="checkbox" name="day" value="木"> 木</label>
+          <label><input type="checkbox" name="day" value="金"> 金</label>
+          <label><input type="checkbox" name="day" value="土"> 土</label>
+          <label><input type="checkbox" name="day" value="日"> 日</label>
+        </div>
+        <div class="time-row">
+          <select id="timeFrom" name="timeFrom">
+            <option value="">---</option>
+            <option>10</option><option>11</option><option>12</option><option>13</option>
+            <option>14</option><option>15</option><option>16</option><option>17</option>
+            <option>18</option><option>19</option>
+          </select>
+          <span>時〜</span>
+          <select id="timeTo" name="timeTo">
+            <option value="">---</option>
+            <option>10</option><option>11</option><option>12</option><option>13</option>
+            <option>14</option><option>15</option><option>16</option><option>17</option>
+            <option>18</option><option>19</option>
+          </select>
+          <span>時迄</span>
+        </div>
+        <p class="note">※ご希望に添えない場合もございます。予めご了承ください。</p>
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="band">ご質問内容</div>
+      <div class="field-body">
+        <textarea id="message" name="message" placeholder="お気軽にご質問ください"></textarea>
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="field-body">
+        <div class="consent">
+          <input type="checkbox" id="consent" name="consent" required>
+          <label for="consent"><a href="#" target="_blank">プライバシーポリシー</a>に同意します</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="submit-row">
+      <button type="submit" id="submitBtn">入力内容を確認</button>
+      <div id="status" role="status"></div>
+    </div>
+  </form>
+</main>
+
+<footer>© JOB CHALLE. All Rights Reserved.</footer>
+
+<script>
+  // ▼▼ 環境ごとに変更する設定値 ▼▼
+  // テスト環境用リポジトリと本番環境用リポジトリで、それぞれ別のGASデプロイURLを設定してください
+  const GAS_ENDPOINT = "https://script.google.com/macros/s/AKfycbxGTmCUnV-m3QXoiVQl2EGiz6Cl9kYyHHAUkXlLh2602s1xx2TMteXZR8HzmtFpdTL6/exec";
+  // ▲▲ ここまで ▲▲
+
+  const FORM_TYPE = "簡単オファー(共通)";
+
+  const form = document.getElementById("entryForm");
+  const statusEl = document.getElementById("status");
+  const btn = document.getElementById("submitBtn");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    statusEl.textContent = "";
+    statusEl.className = "";
+    btn.disabled = true;
+    btn.textContent = "送信中...";
+
+    const fd = new FormData(form);
+    const data = {};
+    const days = [];
+    fd.forEach((value, key) => {
+      if (key === "day") {
+        days.push(value);
+      } else if (key !== "timeFrom" && key !== "timeTo") {
+        data[key] = value;
+      }
+    });
+
+    // 希望連絡日時を1つの文字列にまとめる（例: 月,火 / 10時〜12時）
+    const timeFrom = fd.get("timeFrom");
+    const timeTo = fd.get("timeTo");
+    let contactTime = days.join(",");
+    if (timeFrom || timeTo) {
+      contactTime += ` / ${timeFrom || "未指定"}時〜${timeTo || "未指定"}時`;
+    }
+    data.contactTime = contactTime;
+
+    data.formType = FORM_TYPE;
+    data.submittedAt = new Date().toISOString();
+    data.pageUrl = window.location.href;
+
+    try {
+      const res = await fetch(GAS_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify(data),
+      });
+      const result = await res.json();
+      if (result.result === "success") {
+        statusEl.textContent = "送信が完了しました。ご応募ありがとうございます。";
+        statusEl.className = "success";
+        form.reset();
+      } else {
+        throw new Error(result.message || "送信に失敗しました");
+      }
+    } catch (err) {
+      statusEl.textContent = "送信に失敗しました。時間をおいて再度お試しください。";
+      statusEl.className = "error";
+    } finally {
+      btn.disabled = false;
+      btn.textContent = "入力内容を確認";
+    }
+  });
+</script>
+
+</body>
+</html>

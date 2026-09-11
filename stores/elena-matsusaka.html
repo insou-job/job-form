@@ -432,13 +432,13 @@
         </div>
 
         <div class="field">
-          <label for="tel">電話番号<span class="req">必須</span></label>
-          <input type="tel" id="tel" name="tel" required placeholder="09012345678">
+          <label for="email">メールアドレス<span class="req">必須</span></label>
+          <input type="email" id="email" name="email" required>
         </div>
 
         <div class="field">
-          <label for="email">メールアドレス（任意）</label>
-          <input type="email" id="email" name="email">
+          <label for="tel">電話番号（任意）</label>
+          <input type="tel" id="tel" name="tel" placeholder="09012345678">
         </div>
 
         <div class="field">
@@ -502,7 +502,7 @@
   // このLPで実際に使う職種だけを配列に残してください（オン/オフはこの配列で管理）
   const JOB_TYPES = ["キャスト応募", "スタッフ応募"];
 
-  const REQUIRED_FIELDS = ["jobType", "name", "age", "tel"]; // ★のついた必須項目と合わせて変更してください
+  const REQUIRED_FIELDS = ["jobType", "name", "age", "email"]; // ★のついた必須項目と合わせて変更してください
   // ▲▲ ここまで ▲▲
 
   // 職種セレクトボックスを動的に生成

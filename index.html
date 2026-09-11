@@ -317,6 +317,7 @@
   // ▲▲ ここまで ▲▲
 
   const FORM_TYPE = "簡単オファー(共通)";
+  const REQUIRED_FIELDS = ["name", "age", "tel"]; // ★のついた必須項目と合わせて変更してください
 
   const form = document.getElementById("entryForm");
   const statusEl = document.getElementById("status");
@@ -350,6 +351,7 @@
     data.contactTime = contactTime;
 
     data.formType = FORM_TYPE;
+    data.requiredFields = REQUIRED_FIELDS.join(",");
     data.submittedAt = new Date().toISOString();
     data.pageUrl = window.location.href;
 

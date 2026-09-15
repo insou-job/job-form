@@ -964,7 +964,7 @@
     data.store = STORE_NAME;
     data.formType = FORM_TYPE;
     data.requiredFields = REQUIRED_FIELDS.join(",");
-    data.submittedAt = new Date().toISOString();
+    data.submittedAt = new Date().toLocaleString("ja-JP", { timeZone: "Asia/Tokyo" });
     data.pageUrl = window.location.href;
 
     try {

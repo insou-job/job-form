@@ -491,7 +491,10 @@
 
 <script>
   // ▼▼ 環境ごとに変更する設定値 ▼▼
-  const GAS_ENDPOINT = "https://script.google.com/macros/s/AKfycbxGTmCUnV-m3QXoiVQl2EGiz6Cl9kYyHHAUkXlLh2602s1xx2TMteXZR8HzmtFpdTL6/exec";
+  // テスト・本番でファイルを分ける必要がないよう、アクセス中のドメインで自動判定します
+  const GAS_ENDPOINT = location.hostname.includes("form.insou-job.com")
+    ? "https://script.google.com/macros/s/AKfycbxGTmCUnV-m3QXoiVQl2EGiz6Cl9kYyHHAUkXlLh2602s1xx2TMteXZR8HzmtFpdTL6/exec" // 本番
+    : "https://script.google.com/macros/s/AKfycbwhPlASGST33wQB02Dpou9QiZayyLy3LQJqdKwVaaJv4NOLXMJHVj7s9Vu_PCPAAdY/exec"; // テスト（ローカルファイルでの確認時もこちら）
   const STORE_NAME = "エレナハウス松阪";
   const FORM_TYPE = "店舗LP";
 

@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="/images/favicon.png">
 <title>エレナハウス松阪 求人｜完全未経験からナイトデビュー</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,10 +37,25 @@
   /* ---------- HERO ---------- */
   .hero{
     position:relative;
-    background:radial-gradient(ellipse at 30% 0%, var(--deep2) 0%, var(--deep) 60%, #150d08 100%);
+    overflow:hidden;
+    background:var(--deep);
     color:var(--cream);
     padding:40px 0 38px;
   }
+  .hero::before{
+    content:"";
+    position:absolute; inset:0;
+    background:url("https://img.fankura.com/img/w1000h676/Zd/my/Zdmy8fVRtvPT_5_533335.jpg") center/cover no-repeat;
+    opacity:.16;
+    z-index:0;
+  }
+  .hero::after{
+    content:"";
+    position:absolute; inset:0;
+    background:radial-gradient(ellipse at 30% 0%, var(--deep2) 0%, var(--deep) 60%, #150d08 100%);
+    z-index:0;
+  }
+  .hero .wrap{position:relative; z-index:1;}
   .logo-card{
     width:min(56%,220px);
     margin:0 auto 22px;
@@ -48,7 +64,7 @@
     background:rgba(0,0,0,.25);
     border:1px solid rgba(230,197,131,.25);
   }
-  .hero .badge{
+    .hero .badge{
     display:block;
     text-align:center;
     font-size:12px;

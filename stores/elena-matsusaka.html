@@ -38,21 +38,12 @@
   .hero{
     position:relative;
     overflow:hidden;
-    background:var(--deep);
     color:var(--cream);
+    background:
+      radial-gradient(ellipse at 30% 0%, rgba(58,42,23,.5) 0%, rgba(36,26,17,.62) 55%, rgba(21,13,8,.78) 100%),
+      url("https://img.fankura.com/img/w1000h676/Zd/my/Zdmy8fVRtvPT_5_533335.jpg") center/cover no-repeat;
+    background-color:var(--deep);
     padding:40px 0 38px;
-  }
-  .hero::before{
-    content:"";
-    position:absolute; inset:0;
-    background:url("https://img.fankura.com/img/w1000h676/Zd/my/Zdmy8fVRtvPT_5_533335.jpg") center/cover no-repeat;
-    z-index:0;
-  }
-  .hero::after{
-    content:"";
-    position:absolute; inset:0;
-    background:radial-gradient(ellipse at 30% 0%, rgba(58,42,23,.93) 0%, rgba(36,26,17,.95) 60%, rgba(21,13,8,.97) 100%);
-    z-index:0;
   }
   .hero .wrap{position:relative; z-index:1;}
   .logo-card{

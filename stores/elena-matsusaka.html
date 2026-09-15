@@ -7,202 +7,461 @@
 <title>エレナハウス松阪 求人｜完全未経験からナイトデビュー</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Zen+Kaku+Gothic+New:wght@500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Serif+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --deep:#161412;
-    --deep2:#232019;
-    --gold:#c9a24a;
-    --gold-soft:#e6c877;
-    --wine:#5a4632;
-    --cream:#f7f5f1;
-    --ink:#2c2a27;
-    --ink-soft:#8a8478;
+    /* BARCELONA系：写真を邪魔しない、やわらかいニュートラルカラー */
+    --deep:#3d2229;
+    --deep2:#522c37;
+    --accent:#8d5962;
+    --gold:#8d5962;
+    --gold-soft:#c48b93;
+    --wine:#8d5962;
+    --pink:#b3617a;
+    --pink-dark:#96475f;
+    --cream:#fbf8f7;
+    --ink:#5c3e46;
+    --ink-soft:#957c81;
     --max:680px;
-    --radius:16px;
+    --radius:10px;
   }
+
   *{box-sizing:border-box;}
+
   body{
     margin:0;
-    background:var(--cream);
+    background:#fff;
     color:var(--ink);
-    font-family:"Noto Sans JP", sans-serif;
-    line-height:1.85;
+    font-family:"Noto Serif JP","Hiragino Mincho ProN","Yu Mincho",YuMincho,serif;
+    font-weight:400;
+    line-height:1.9;
     -webkit-font-smoothing:antialiased;
+    padding-bottom:64px;
   }
-  h1,h2,h3{font-family:"Zen Kaku Gothic New", sans-serif; font-weight:900; margin:0;}
-  img{max-width:100%; display:block;}
-  .wrap{max-width:var(--max); margin:0 auto; padding:0 20px;}
+
+  /* 見出しは参考サイト寄りの上品な明朝 */
+  h1,h2,h3{
+    font-family:"Noto Serif JP","Hiragino Mincho ProN","Yu Mincho",YuMincho,serif;
+    font-weight:500;
+    margin:0;
+  }
+
+  .hero .catch,
+  .hero h1,
+  .hero .sub,
+  .hero .wage,
+  .section-title,
+  .point .ttl,
+  .job-block h3{
+    font-family:"Noto Serif JP","Hiragino Mincho ProN","Yu Mincho",YuMincho,serif;
+  }
+
+  img{
+    max-width:100%;
+    display:block;
+  }
+
+  /* 全体の日本語をBARCELONA系の上品な明朝トーンに統一 */
+  body,
+  input,
+  select,
+  textarea,
+  button{
+    font-family:"Noto Serif JP","Hiragino Mincho ProN","Yu Mincho",YuMincho,serif;
+  }
+
+  .badge,
+  .hero .catch,
+  .hero .sub,
+  .section-title,
+  .section-title small,
+  .section-lead,
+  .point .ttl,
+  .point .desc,
+  .gallery-caption,
+  .pr-card,
+  .pr-card p,
+  .pr-card ul,
+  .pr-card .highlight,
+  .tag,
+  .job-block h3,
+  .info,
+  .info dl,
+  .info dt,
+  .info dd,
+  .info dd small,
+  .field,
+  .field label,
+  .consent,
+  .alt-contact,
+  .contact-hours,
+  footer,
+  .jobchalle-footer-link{
+    font-family:"Noto Serif JP","Hiragino Mincho ProN","Yu Mincho",YuMincho,serif;
+  }
+
+  .logo-card + .badge{
+    letter-spacing:.14em;
+  }
+
+  .hero .badge,
+  .hero .catch,
+  .hero .sub,
+  .section-title small{
+    font-weight:400;
+  }
+
+  .pr-card p,
+  .pr-card ul,
+  .info dd,
+  .field label,
+  .consent{
+    font-weight:400;
+  }
+
+  .wrap{
+    max-width:var(--max);
+    margin:0 auto;
+    padding:0 20px;
+  }
 
   /* ---------- HERO ---------- */
   .hero{
     position:relative;
     overflow:hidden;
-    color:var(--cream);
+    color:#fff;
     background:
-      radial-gradient(ellipse at 30% 0%, rgba(35,32,25,.5) 0%, rgba(22,20,18,.65) 55%, rgba(10,9,7,.8) 100%),
+      linear-gradient(rgba(61,34,41,.38),rgba(61,34,41,.52)),
       url("https://img.fankura.com/img/w1000h676/Zd/my/Zdmy8fVRtvPT_5_533335.jpg") center/cover no-repeat;
     background-color:var(--deep);
-    padding:40px 0 38px;
+    padding:48px 0 44px;
   }
-  .hero .wrap{position:relative; z-index:1;}
+
+  .hero .wrap{
+    position:relative;
+    z-index:1;
+  }
+
   .logo-card{
-    width:min(9%,44px);
-    margin:0 auto 18px;
+    width:min(11%,52px);
+    margin:0 auto 20px;
   }
-    .hero .badge{
-    display:block;
+
+  .hero .badge{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
     text-align:center;
-    font-size:12px;
-    letter-spacing:.14em;
-    color:var(--gold-soft);
-    margin-bottom:14px;
+    font-size:11px;
+    letter-spacing:.17em;
+    color:#f2dce0;
+    margin-bottom:13px;
   }
+
+  .hero .badge::before,
+  .hero .badge::after{
+    content:"";
+    display:inline-block;
+    width:26px;
+    height:1px;
+    background:rgba(242,220,224,.55);
+  }
+
   .hero .catch{
     text-align:center;
-    font-size:14px;
-    color:var(--gold-soft);
+    font-size:13px;
+    color:#f0d8dc;
     margin-bottom:10px;
   }
+
   .hero h1{
     text-align:center;
     font-size:clamp(26px, 6.5vw, 36px);
-    font-weight:700;
-    line-height:1.6;
+    font-weight:500;
+    line-height:1.65;
     margin-bottom:18px;
+    letter-spacing:.03em;
   }
+
   .hero h1 em{
     font-style:normal;
-    color:var(--gold);
+    color:#efb1ba;
   }
+
   .hero .sub{
     text-align:center;
-    font-size:14px;
-    color:#e7dcc9;
+    font-size:13px;
+    color:#eee6e5;
     margin-bottom:22px;
   }
+
   .hero .wage{
     text-align:center;
-    font-size:14.5px;
+    font-size:14px;
     margin-bottom:24px;
   }
+
   .hero .wage b{
-    font-family:"Zen Kaku Gothic New", sans-serif;
-    font-weight:900;
+    font-family:"Noto Serif JP","Hiragino Mincho ProN","Yu Mincho",YuMincho,serif;
+    font-weight:600;
     font-size:30px;
-    color:var(--gold);
+    color:var(--gold-soft);
     margin:0 4px;
   }
+
   .hero .cta-row{text-align:center;}
+
   .hero .cta{
     display:inline-block;
-    background:var(--gold);
-    color:#151310;
-    font-weight:900;
-    letter-spacing:.02em;
+    background:var(--pink);
+    color:#fff;
+    font-weight:500;
+    letter-spacing:.08em;
     text-decoration:none;
-    padding:15px 42px;
-    border-radius:999px;
-    font-size:15.5px;
-    box-shadow:0 8px 20px rgba(201,162,74,.3);
+    padding:14px 42px;
+    border-radius:2px;
+    font-size:14px;
+    box-shadow:none;
+    transition:background .2s,color .2s;
+  }
+
+  .hero .cta:hover{
+    background:var(--pink-dark);
+    color:#fff;
   }
 
   /* ---------- SECTIONS ---------- */
-  section{padding:46px 0;}
-  .section-title{text-align:center; font-size:21px; margin-bottom:6px;}
+  section{
+    padding:52px 0;
+  }
+
+  .section-title{
+    text-align:center;
+    font-size:23px;
+    line-height:1.6;
+    margin-bottom:8px;
+    color:#55514f;
+    letter-spacing:.04em;
+  }
+
   .section-title small{
     display:block;
-    font-family:"Noto Sans JP", sans-serif;
-    font-size:11.5px;
-    color:var(--wine);
-    letter-spacing:.16em;
-    margin-bottom:6px;
+    font-family:"Cormorant Garamond","Times New Roman",serif;
+    font-size:15px;
+    font-weight:400;
+    color:var(--accent);
+    letter-spacing:.12em;
+    margin-bottom:5px;
   }
-  .section-lead{text-align:center; font-size:12.5px; color:var(--ink-soft); margin:8px 0 0;}
+
+  .section-lead{
+    text-align:center;
+    font-size:12.5px;
+    color:var(--ink-soft);
+    margin:8px 0 0;
+  }
 
   /* POINTS */
-  .points{display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:22px;}
+  .points{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+    margin-top:24px;
+  }
+
   .point{
     background:#fff;
-    border:1px solid #e8dcc9;
-    border-radius:14px;
+    border:1px solid #eee6e5;
+    border-radius:4px;
     padding:18px 12px;
     text-align:center;
   }
-  .point .emoji{font-size:22px; margin-bottom:6px;}
-  .point .ttl{font-weight:700; font-size:14px; margin-bottom:3px; color:var(--wine);}
-  .point .desc{font-size:11.5px; color:var(--ink-soft);}
+
+  .point .emoji{
+    font-size:20px;
+    margin-bottom:6px;
+    filter:grayscale(.12);
+  }
+
+  .point .ttl{
+    font-family:"Noto Serif JP","Hiragino Mincho ProN","Yu Mincho",YuMincho,serif;
+    font-weight:500;
+    font-size:14px;
+    margin-bottom:3px;
+    color:var(--ink);
+  }
+
+  .point .desc{
+    font-size:11.5px;
+    color:var(--ink-soft);
+  }
 
   /* GALLERY */
-  .gallery{display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:20px;}
-  .gallery img{width:100%; height:150px; object-fit:cover; border-radius:10px;}
-  .gallery-caption{text-align:center; font-size:11.5px; color:var(--ink-soft); margin-top:12px;}
+  .gallery{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:8px;
+    margin-top:22px;
+  }
+
+  .gallery img{
+    width:100%;
+    height:150px;
+    object-fit:cover;
+    border-radius:2px;
+
+    /* 写真を少しだけ参考サイト寄りの柔らかいトーンに */
+    filter:saturate(.88) contrast(.97) brightness(1.02);
+  }
+
+  .gallery-caption{
+    text-align:center;
+    font-size:11px;
+    color:var(--ink-soft);
+    margin-top:12px;
+  }
 
   /* PR */
   .pr-card{
     background:#fff;
-    border:1px solid #e8dcc9;
-    border-radius:var(--radius);
+    border:1px solid #eee6e5;
+    border-radius:4px;
     padding:26px 22px;
     margin-top:22px;
   }
-  .pr-card p{font-size:14px; margin:0 0 14px;}
-  .pr-card ul{margin:0 0 14px; padding-left:1.2em; font-size:14px;}
+
+  .pr-card p{
+    font-size:14px;
+    margin:0 0 14px;
+  }
+
+  .pr-card ul{
+    margin:0 0 14px;
+    padding-left:1.2em;
+    font-size:14px;
+  }
+
   .pr-card .highlight{
-    background:var(--cream);
-    border-left:3px solid var(--gold);
+    background:#fbf3f4;
+    border-left:2px solid var(--accent);
     padding:12px 14px;
     font-size:13px;
-    color:var(--ink-soft);
-    border-radius:0 8px 8px 0;
+    color:#8a6169;
+    border-radius:0;
   }
 
   /* MERIT */
-  .tags{display:flex; flex-wrap:wrap; justify-content:center; gap:8px; margin-top:20px;}
+  .tags{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:8px;
+    margin-top:22px;
+  }
+
   .tag{
-    background:var(--deep);
-    color:var(--gold-soft);
+    background:#f8eeee;
+    color:#8b5d65;
     font-size:12px;
     padding:7px 14px;
-    border-radius:999px;
+    border-radius:2px;
+    border:1px solid #f0dddf;
   }
 
   /* INFO */
-  .job-block{margin-top:26px;}
+  .job-block{
+    margin-top:28px;
+  }
+
   .job-block h3{
-    font-size:15px;
-    color:var(--wine);
-    border-bottom:2px solid var(--gold);
+    font-size:16px;
+    font-weight:500;
+    color:var(--ink);
+    border-bottom:1px solid #c98b94;
     display:inline-block;
     padding-bottom:4px;
     margin-bottom:10px;
   }
-  .info dl{display:flex; padding:13px 2px; border-bottom:1px solid #e8dcc9; gap:16px; margin:0;}
-  .info dt{flex:0 0 76px; font-size:12.5px; color:var(--wine); font-weight:700; padding-top:1px;}
-  .info dd{margin:0; font-size:13.5px; flex:1;}
-  .info dd small{display:block; color:var(--ink-soft); font-size:11.5px; margin-top:3px;}
+
+  .info dl{
+    display:flex;
+    padding:13px 2px;
+    border-bottom:1px solid #eee6e5;
+    gap:16px;
+    margin:0;
+  }
+
+  .info dt{
+    flex:0 0 76px;
+    font-size:12.5px;
+    color:#8b6268;
+    font-weight:500;
+    padding-top:1px;
+  }
+
+  .info dd{
+    margin:0;
+    font-size:13.5px;
+    flex:1;
+  }
+
+  .info dd small{
+    display:block;
+    color:var(--ink-soft);
+    font-size:11.5px;
+    margin-top:3px;
+  }
 
   /* ENTRY */
   .entry{
-    background:radial-gradient(ellipse at 80% 0%, var(--deep2) 0%, var(--deep) 65%);
-    color:var(--cream);
+    background:#3d2229;
+    color:#f8f5f4;
   }
-  .entry .section-title{color:var(--cream);}
-  .entry .section-title small{color:var(--gold-soft);}
+
+  .entry .section-title{
+    color:#f8f5f4;
+  }
+
+  .entry .section-title small{
+    color:#e0a5ad;
+  }
+
   .form-card{
-    background:var(--cream);
+    background:#fff;
     color:var(--ink);
-    border-radius:var(--radius);
+    border-radius:4px;
     padding:24px 20px;
     margin-top:22px;
   }
-  .field{margin-bottom:18px;}
-  .field label{display:block; font-size:13.5px; font-weight:700; margin-bottom:8px;}
-  .field label .req{color:var(--wine); font-weight:700; margin-left:4px; font-size:11.5px;}
-  input[type=text], input[type=tel], input[type=number], input[type=email], select, textarea{
+
+  .field{
+    margin-bottom:18px;
+  }
+
+  .field label{
+    display:block;
+    font-size:13.5px;
+    font-weight:500;
+    margin-bottom:8px;
+  }
+
+  .field label .req{
+    color:#a86871;
+    font-weight:500;
+    margin-left:4px;
+    font-size:11.5px;
+  }
+
+  input[type=text],
+  input[type=tel],
+  input[type=number],
+  input[type=email],
+  select,
+  textarea{
     width:100%;
-    border:1px solid #ded0b9;
-    border-radius:10px;
+    border:1px solid #ded6d4;
+    border-radius:3px;
     background:#fff;
     padding:13px 14px;
     font-size:16px;
@@ -210,53 +469,156 @@
     color:var(--ink);
     outline:none;
   }
+
   select{
     appearance:none;
-    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23c9973f'><path d='M7 10l5 5 5-5z'/></svg>");
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%238d5962'><path d='M7 10l5 5 5-5z'/></svg>");
     background-repeat:no-repeat;
     background-position:right 16px center;
     background-size:18px;
   }
-  input:focus, select:focus, textarea:focus{border-color:var(--gold);}
-  textarea{min-height:90px; resize:vertical;}
-  .consent{display:flex; align-items:flex-start; gap:8px; margin-bottom:20px; font-size:12.5px; color:var(--ink-soft);}
-  input[type=checkbox]{accent-color:var(--gold); width:16px; height:16px; margin-top:2px;}
+
+  input:focus,
+  select:focus,
+  textarea:focus{
+    border-color:#c58a92;
+  }
+
+  textarea{
+    min-height:90px;
+    resize:vertical;
+  }
+
+  .consent{
+    display:flex;
+    align-items:flex-start;
+    gap:8px;
+    margin-bottom:20px;
+    font-size:12.5px;
+    color:var(--ink-soft);
+  }
+
+  input[type=checkbox]{
+    accent-color:var(--wine);
+    width:16px;
+    height:16px;
+    margin-top:2px;
+  }
+
   .submit-row{text-align:center;}
+
   button[type=submit]{
     appearance:none;
-    background:var(--gold);
-    color:#151310;
+    background:var(--pink);
+    color:#fff;
     border:none;
-    border-radius:999px;
+    border-radius:2px;
     font-family:inherit;
-    font-weight:900;
-    letter-spacing:.02em;
-    font-size:16px;
-    padding:15px 46px;
+    font-weight:500;
+    letter-spacing:.08em;
+    font-size:15px;
+    padding:14px 46px;
     cursor:pointer;
   }
-  button[type=submit]:disabled{opacity:.5; cursor:not-allowed;}
-  #status{margin-top:14px; font-size:13.5px;}
-  #status.error{color:#e8a0a0;}
-  #status.success{color:var(--gold-soft);}
 
-  .alt-contact{text-align:center; font-size:11.5px; color:#e7dcc9; margin-top:18px;}
-  .contact-buttons{display:flex; gap:10px; margin-top:14px;}
-  .contact-buttons a{
-    flex:1; display:flex; align-items:center; justify-content:center; gap:6px;
-    padding:13px 10px; border-radius:999px; text-decoration:none;
-    font-weight:700; font-size:13.5px;
+  button[type=submit]:hover{
+    background:var(--pink-dark);
   }
-  .contact-buttons .call-btn{background:#fff; color:var(--wine); border:1.5px solid #e8dcc9;}
-  .contact-buttons .line-btn{background:#06C755; color:#fff;}
-  .contact-hours{text-align:center; font-size:10.5px; color:var(--ink-soft); margin-top:8px;}
+
+  button[type=submit]:disabled{
+    opacity:.5;
+    cursor:not-allowed;
+  }
+
+  #status{
+    margin-top:14px;
+    font-size:13.5px;
+  }
+
+  #status.error{color:#ad626b;}
+  #status.success{color:#8d6970;}
+
+  .alt-contact{
+    text-align:center;
+    font-size:11.5px;
+    color:#aaa1a0;
+    margin-top:18px;
+  }
+
+  .contact-buttons{
+    display:flex;
+    gap:10px;
+    margin-top:14px;
+  }
+
+  .contact-buttons a{
+    flex:1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+    padding:13px 10px;
+    border-radius:2px;
+    text-decoration:none;
+    font-weight:500;
+    font-size:13.5px;
+  }
+
+  .contact-buttons .call-btn{
+    background:#4a90c4;
+    color:#fff;
+    border:1px solid #4a90c4;
+  }
+
+  .contact-buttons .call-btn:hover{
+    background:#3a7aa8;
+  }
+
+  .contact-buttons .line-btn{
+    background:#06C755;
+    color:#fff;
+  }
+
+  .contact-hours{
+    text-align:center;
+    font-size:10.5px;
+    color:var(--ink-soft);
+    margin-top:8px;
+  }
+
+  /* sticky CTA */
+  .sticky-cta{
+    position:fixed;left:0;right:0;bottom:0;z-index:50;
+    background:rgba(255,255,255,.94);
+    backdrop-filter:blur(10px);
+    border-top:1px solid #ecdfe1;
+    padding:9px 14px calc(9px + env(safe-area-inset-bottom));
+    display:flex;justify-content:center;
+  }
+  .sticky-cta a{
+    width:min(520px,100%);text-align:center;text-decoration:none;
+    padding:13px 18px;border-radius:2px;
+    background:var(--pink);
+    color:#fff;font-weight:500;letter-spacing:.08em;font-size:14px;
+  }
+  .sticky-cta a:hover{background:var(--pink-dark);}
+
+  @media(min-width:681px){
+    body{padding-bottom:0;}
+    .sticky-cta{display:none;}
+  }
 
   /* FOOTER */
-  footer{padding:30px 20px 46px;}
+  footer{
+    padding:30px 20px 46px;
+    background:#fff;
+  }
+
   .footer-logo-card{
     max-width:34px;
     margin:0 auto 14px;
   }
+
   .jobchalle-footer-link{
     display:flex;
     align-items:center;
@@ -264,14 +626,81 @@
     max-width:280px;
     margin:22px auto 14px;
     padding:14px 16px;
-    border-radius:14px;
+    border-radius:4px;
     background:#fff;
-    border:1px solid #e8dcc9;
+    border:1px solid #eee6e5;
     text-decoration:none;
   }
-  .jobchalle-footer-link img{width:70%; height:auto;}
-  .footer-links{text-align:center; font-size:11.5px; color:var(--ink-soft);}
-  .footer-links a{color:var(--wine); text-decoration:underline; text-underline-offset:3px;}
+
+  .jobchalle-footer-link img{
+    width:70%;
+    height:auto;
+  }
+
+  .footer-links{
+    text-align:center;
+    font-size:11.5px;
+    color:var(--ink-soft);
+  }
+
+  .footer-links a{
+    color:#8b6268;
+    text-decoration:underline;
+    text-underline-offset:3px;
+  }
+
+  @media(max-width:768px){
+    section{padding:50px 0;}
+
+    .hero{padding:44px 0 40px;}
+
+    .hero h1{
+      font-size:31px;
+      line-height:1.65;
+    }
+
+    .hero .cta{
+      padding:13px 36px;
+    }
+
+    .points{
+      grid-template-columns:1fr 1fr;
+      gap:10px;
+    }
+
+    .gallery{
+      grid-template-columns:1fr 1fr;
+    }
+
+    .gallery img{
+      height:145px;
+    }
+  }
+
+  /* ボタン類もサイト全体の明朝トーンに統一 */
+  .hero .cta,
+  .cta,
+  button[type=submit],
+  .contact-buttons a,
+  .call-btn,
+  .line-btn,
+  .jobchalle-footer-link{
+    font-family:"Noto Serif JP","Hiragino Mincho ProN","Yu Mincho",YuMincho,serif !important;
+    font-weight:500;
+  }
+
+  .hero .cta{
+    letter-spacing:.08em;
+  }
+
+  button[type=submit]{
+    letter-spacing:.08em;
+  }
+
+  .contact-buttons a{
+    letter-spacing:.04em;
+  }
+
 </style>
 </head>
 <body>
@@ -280,7 +709,7 @@
 <div class="hero">
   <div class="wrap">
     <div class="logo-card">
-      <img src="/images/elena-logo-white.png" alt="ELENA HOUSE">
+      <img src="https://test.insou-job.com/images/elena-logo-white.png" alt="ELENA HOUSE">
     </div>
     <span class="badge">三重 / 松阪 ・ キャバクラ</span>
     <p class="catch">完全未経験からのナイトデビュー</p>
@@ -477,7 +906,7 @@
 <footer>
   <div class="footer-logo-card">
     <a href="https://www.elena-house.com/" target="_blank" rel="noopener noreferrer">
-      <img src="/images/elena-logo-black.png" alt="ELENA HOUSE">
+      <img src="https://test.insou-job.com/images/elena-logo-black.png" alt="ELENA HOUSE">
     </a>
   </div>
 
@@ -561,6 +990,8 @@
     }
   });
 </script>
+
+<div class="sticky-cta"><a href="#entry">応募する</a></div>
 
 </body>
 </html>

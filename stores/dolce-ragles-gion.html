@@ -171,6 +171,22 @@
     z-index:1;
   }
 
+  .hero .open-badge{
+    text-align:center;
+    margin:0 0 14px;
+  }
+  .hero .open-badge span{
+    display:inline-block;
+    background:var(--gold);
+    color:var(--deep);
+    font-weight:700;
+    font-size:15px;
+    letter-spacing:.03em;
+    padding:7px 20px;
+    border-radius:999px;
+    box-shadow:0 4px 14px rgba(0,0,0,.25);
+  }
+
   .logo-card{
     width:min(11%,52px);
     margin:0 auto 20px;
@@ -749,6 +765,49 @@
   }
 
 </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "JobPosting",
+  "title": "キャスト（フロアレディ）",
+  "description": "2026年10月22日、京都・祇園に高級ラウンジ「ドルチェラグレス祇園」が誕生します。「高収入も働きやすさも祇園エリアNo.1級」を目指す新店で、オープニングスタッフを募集しています。 【勤務時間】20:00〜LAST　【応募資格】20歳以上",
+  "identifier": {
+    "@type": "PropertyValue",
+    "name": "ドルチェラグレス祇園",
+    "value": "dolce-ragles-gion"
+  },
+  "datePosted": "2026-09-30",
+  "validThrough": "2026-12-29T23:59:59+09:00",
+  "employmentType": "OTHER",
+  "hiringOrganization": {
+    "@type": "Organization",
+    "name": "ドルチェラグレス祇園",
+    "sameAs": "https://form.insou-job.com/stores/dolce-ragles-gion.html",
+    "logo": "https://form.insou-job.com/images/dolce-ragles-gion-logo-black.png"
+  },
+  "jobLocation": {
+    "@type": "Place",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "大和大路通四条上る2丁目常盤町164 白川ビル1F・地下B1F",
+      "addressLocality": "京都市東山区",
+      "addressRegion": "京都府",
+      "addressCountry": "JP"
+    }
+  },
+  "baseSalary": {
+    "@type": "MonetaryAmount",
+    "currency": "JPY",
+    "value": {
+      "@type": "QuantitativeValue",
+      "minValue": 10000,
+      "maxValue": 20000,
+      "unitText": "HOUR"
+    }
+  },
+  "directApply": true
+}
+    </script>
 </head>
 <body>
 
@@ -759,7 +818,8 @@
       <img src="/images/dolce-ragles-gion-logo-white.png" alt="logo">
     </div>
     <span class="badge">京都 / 祇園 ・ 高級ラウンジ</span>
-    <p class="catch">2026年10月7日、祇園に高級ラウンジが誕生</p>
+    <div class="open-badge"><span>2026年10月22日 OPEN</span></div>
+    <p class="catch">2026年10月22日、祇園に高級ラウンジが誕生</p>
     <h1>時給10,000円〜×祇園エリアNo.1級を目指す<br>新規オープニングスタッフ大募集</h1>
     <p class="sub">祇園四条駅より徒歩3分、新規オープンの高級ラウンジ<br>ノルマ・罰金・同伴やアフターの強制は一切ありません</p>
     <p class="wage">時給 <b>10,000</b>円〜</p>
@@ -822,7 +882,7 @@
   <div class="wrap">
     <h2 class="section-title"><small>ABOUT</small>お店からのメッセージ</h2>
     <div class="pr-card">
-      <p>2026年10月7日、京都・祇園に高級ラウンジ「ドルチェラグレス祇園」が誕生します。「高収入も働きやすさも祇園エリアNo.1級」を目指す新店で、オープニングスタッフを募集しています。</p>
+      <p>2026年10月22日、京都・祇園に高級ラウンジ「ドルチェラグレス祇園」が誕生します。「高収入も働きやすさも祇園エリアNo.1級」を目指す新店で、オープニングスタッフを募集しています。</p>
       <ul>
         <li>祇園エリアでしっかり稼ぎたい方</li>
         <li>ノルマや同伴・アフターの強制に疲れた方</li>
@@ -888,7 +948,7 @@
     <div class="job-block">
       <h3>社員</h3>
       <div class="info">
-        <dl><dt>給与</dt><dd>月給30万8,000円〜<small></small></dd></dl>
+        <dl><dt>給与</dt><dd>月給33万円〜<small></small></dd></dl>
         <dl><dt>勤務時間</dt><dd>17:00〜翌3:00<small></small></dd></dl>
         <dl><dt>応募資格</dt><dd>経験一切不問<small></small></dd></dl>
       </div>
@@ -996,7 +1056,7 @@
 
   // 職種マスタ（全店共通の選択肢一覧・コピー用）:
   // キャスト応募 / スタッフ応募 / ドライバー応募 / 社員応募 / バニーガール応募 /
-  // ダンサー応募 / キッチンスタッフ応募 / DJ応募 / その他
+  // ダンサー応募 / キッチンスタッフ応募 / DJ応募 / ヘアメイク応募 / その他
   //
   // このLPで実際に使う職種だけを配列に残してください（オン/オフはこの配列で管理）
   const JOB_TYPES = ["キャスト応募", "スタッフ応募", "キッチン応募", "社員応募", "ドライバー応募"];

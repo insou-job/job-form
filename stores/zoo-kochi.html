@@ -171,6 +171,22 @@
     z-index:1;
   }
 
+  .hero .open-badge{
+    text-align:center;
+    margin:0 0 14px;
+  }
+  .hero .open-badge span{
+    display:inline-block;
+    background:var(--gold);
+    color:var(--deep);
+    font-weight:700;
+    font-size:15px;
+    letter-spacing:.03em;
+    padding:7px 20px;
+    border-radius:999px;
+    box-shadow:0 4px 14px rgba(0,0,0,.25);
+  }
+
   .logo-card{
     width:min(11%,52px);
     margin:0 auto 20px;
@@ -749,6 +765,48 @@
   }
 
 </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "JobPosting",
+  "title": "キャスト（フロアレディ）",
+  "description": "全国に店舗を展開する人気キャバクラブランド「ZOO」が、ついに高知へ上陸します。新規オープンの店舗だからこそ、経験の有無にかかわらず昇格・活躍のチャンスが広がっています。 【勤務時間】19:00〜01:00　【応募資格】未経験・夜職デビュー歓迎",
+  "identifier": {
+    "@type": "PropertyValue",
+    "name": "ZOO 高知",
+    "value": "zoo-kochi"
+  },
+  "datePosted": "2026-09-30",
+  "validThrough": "2026-12-29T23:59:59+09:00",
+  "employmentType": "OTHER",
+  "hiringOrganization": {
+    "@type": "Organization",
+    "name": "ZOO 高知",
+    "sameAs": "https://form.insou-job.com/stores/zoo-kochi.html",
+    "logo": "https://form.insou-job.com/images/zoo-kochi-logo-black.png"
+  },
+  "jobLocation": {
+    "@type": "Place",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "追手筋1-3-1 ベルエポックビル8F",
+      "addressLocality": "高知市",
+      "addressRegion": "高知県",
+      "addressCountry": "JP"
+    }
+  },
+  "baseSalary": {
+    "@type": "MonetaryAmount",
+    "currency": "JPY",
+    "value": {
+      "@type": "QuantitativeValue",
+      "minValue": 5000,
+      "unitText": "HOUR"
+    }
+  },
+  "directApply": true
+}
+    </script>
 </head>
 <body>
 
@@ -759,6 +817,7 @@
       <img src="/images/zoo-kochi-logo-white.png" alt="logo">
     </div>
     <span class="badge">高知 ・ キャバクラ</span>
+    <div class="open-badge"><span>2026年10月21日 NEW OPEN</span></div>
     <p class="catch">唯一無二の王道ブランド「ZOO」がついに高知上陸</p>
     <h1>体験時給5,000円〜×未経験大歓迎<br>高知に新しいナイトのカタチ</h1>
     <p class="sub">全国展開の人気キャバクラブランド「ZOO」高知店<br>新規オープンだから、経験の有無に関わらず活躍のチャンスがあります</p>
@@ -884,6 +943,15 @@
       </div>
     </div>
 
+    <div class="job-block">
+      <h3>ヘアメイク</h3>
+      <div class="info">
+        <dl><dt>給与</dt><dd>時給1,600円<small>研修時給1,400円</small></dd></dl>
+        <dl><dt>勤務時間</dt><dd>19:30〜22:00<small></small></dd></dl>
+      </div>
+    </div>
+
+
     <div class="job-block info-block">
       <h3>店舗情報</h3>
       <div class="info">
@@ -977,10 +1045,10 @@
 
   // 職種マスタ（全店共通の選択肢一覧・コピー用）:
   // キャスト応募 / スタッフ応募 / ドライバー応募 / 社員応募 / バニーガール応募 /
-  // ダンサー応募 / キッチンスタッフ応募 / DJ応募 / その他
+  // ダンサー応募 / キッチンスタッフ応募 / DJ応募 / ヘアメイク応募 / その他
   //
   // このLPで実際に使う職種だけを配列に残してください（オン/オフはこの配列で管理）
-  const JOB_TYPES = ["キャスト応募", "スタッフ応募", "ドライバー応募"];
+  const JOB_TYPES = ["キャスト応募", "スタッフ応募", "ドライバー応募", "ヘアメイク応募"];
 
   const REQUIRED_FIELDS = ["jobType", "name", "age", "email"]; // ★のついた必須項目と合わせて変更してください
 
